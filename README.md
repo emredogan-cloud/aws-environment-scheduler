@@ -1,6 +1,6 @@
 # ☁️ AWS EC2 Night Watchman (Cost Optimizer)
 
-![CI Status](https://github.com/emredogan-cloud/aws-environment-scheduler/actions/workflows/ci.yml/badge.svg)
+[![aws-environment-scheduler CI](https://github.com/emredogan-cloud/aws-environment-scheduler/actions/workflows/main.yaml/badge.svg)](https://github.com/emredogan-cloud/aws-environment-scheduler/actions/workflows/main.yaml)
 
 **Night Watchman** is a Python-based automation tool designed to optimize AWS costs by managing the lifecycle of EC2 instances. It automatically identifies development servers based on specific tags and toggles their state (Stop/Start) to prevent unnecessary billing during off-hours.
 
