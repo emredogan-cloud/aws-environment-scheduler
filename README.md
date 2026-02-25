@@ -126,24 +126,25 @@ You can package and run this tool using Docker. This makes it easy to execute an
 Create a `Dockerfile` next to `main.py`:
 
 ```dockerfile
-FROM python:3.11-slim
+FROM python:3.12-slim
+RUN apt-get update && apt-get upgrade -y
 
 WORKDIR /app
 
 # Install dependencies
-RUN pip install --no-cache-dir boto3 botocore
+RUN pip install --no-cache-dir requirements.txt
 
 # Copy the script
-COPY main.py /app/main.py
+COPY main.py 
 
 # Default command (you will override args at runtime)
-ENTRYPOINT ["python", "/app/main.py"]
+ENTRYPOINT ["python", "main.py"]
 ```
 
 ### 2) Build the image
 
 ```bash
-docker build -t ec2-batch-power-manager .
+docker build -t ec2-manager .
 ```
 
 ### 3) Run the container
@@ -178,12 +179,19 @@ docker run --rm   -e AWS_ACCESS_KEY_ID="YOUR_KEY"   -e AWS_SECRET_ACCESS_KEY="YO
 
 ```text
 .
+aws-environment-scheduler/
+├── .github/
+├── .gitignore
+├── .dockerignore         
+├── Dockerfile
+├── LICENSE
 ├── main.py
-└── README.md
+├── README.md
+└── requirements.txt
 ```
 
 ---
 
 ## License
 
-MIT (or choose your preferred license)
+MIT LICENSE
