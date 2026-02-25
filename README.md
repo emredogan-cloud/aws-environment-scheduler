@@ -139,10 +139,10 @@ RUN apt-get update && apt-get upgrade -y
 WORKDIR /app
 
 # Install dependencies
-RUN pip install --no-cache-dir requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the script
-COPY main.py 
+COPY main.py .
 
 # Default command (you will override args at runtime)
 ENTRYPOINT ["python", "main.py"]
