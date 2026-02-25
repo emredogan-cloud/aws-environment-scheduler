@@ -20,6 +20,13 @@ This is useful for cost control in non-production environments (Dev/Test/Staging
 
 ---
 
+
+[![CloudWarden CI](https://github.com/emredogan-cloud/aws-environment-scheduler/actions/workflows/main.yaml/badge.svg)](https://github.com/emredogan-cloud/aws-environment-scheduler/actions/workflows/main.yaml)
+
+## Architecture Diagram
+
+![Architecture](docs/architecture.png)
+
 ## Requirements
 
 - Python 3.8+
